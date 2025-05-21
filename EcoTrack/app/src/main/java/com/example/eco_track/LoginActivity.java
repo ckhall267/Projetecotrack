@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         loginButton.setOnClickListener(v -> {
+            Log.d("LoginActivity", "Bouton connexion cliqué");
             String email = emailEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
 
@@ -53,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish(); // Ferme LoginActivity
-            progressBar.setVisibility(View.GONE);
+
         });
 
         registerButton.setOnClickListener(v -> {
@@ -62,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    // ✅ Méthode déplacée en dehors de onCreate()
     private void saveUserToPreferences(User user) {
         SharedPreferences sharedPref = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();

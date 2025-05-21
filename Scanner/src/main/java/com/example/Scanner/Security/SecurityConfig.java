@@ -16,10 +16,11 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Désactive CSRF
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/users/register").permitAll() // Autorise l'inscription sans auth
+                        .requestMatchers("/users/register","/product/**").permitAll()
                         .anyRequest().authenticated()
                 );
 
         return http.build();
     }
+
 }

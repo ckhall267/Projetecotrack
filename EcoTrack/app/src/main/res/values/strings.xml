@@ -8,4 +8,6 @@
     <string name="scanner_un_produit">Scanner un produit</string>
     <string name="bienvenue_sur_ecotrack">Bienvenue sur EcoTrack</string>
     <string name="nom_du_produit">Nom du produit</string>
+    <string name="bienvenue_message">Bienvenue dans Eco Track</string>
+    <string name="logo_description">Logo Eco Track</string>
 </resources>
